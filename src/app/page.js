@@ -43,12 +43,28 @@ export default function Home() {
 
       {datos.map(dato => (
         <section className=" w-[70%]   py-10 px-8  text-black" key={dato.id} id={dato.id}>
-          <h1 className=" text-center text-2xl font-bold ">{dato.titulo}</h1>
+          <h2 className=" text-center text-2xl font-bold my-3 ">{dato.titulo}</h2>
           {dato.contenido ? <p className=" ">{dato.contenido}</p> : null}
-          {dato.urlImgen ? <Image  width={500} height={500} layout="responsive" objectFit="cover" objectPosition="center" src={dato.urlImgen} alt="imagen" /> : null} 
+          {dato.urlImgen ? <Image width={500} height={500} layout="responsive" objectFit="cover" objectPosition="center" src={dato.urlImgen} alt="imagen" /> : null}
         </section>
 
       ))}
+
+
+
+      <div className=" w-[25%] min-h-[50vh] overflow-y-scroll flex flex-col justify-center items-center space-y-5 text-white bg-yellow-900 rounded-3xl py-5 fixed top-80 right-32 opacity-100 z-20 [&>h2]:border [&>h2]:border-x-transparent [&>h2]:border-t-transparent [&>h2]:border-slate-400">
+
+        {datos.map(dato => (
+
+          <h2 className=" text-center text-2xl font-bold mb-3 cursor-pointer " key={dato.id} 
+          onClick={() => {
+            document.getElementById(dato.id).scrollIntoView({ behavior: "smooth" });
+          }}
+          >{dato.titulo}</h2>
+
+        ))}
+
+      </div>
 
 
 

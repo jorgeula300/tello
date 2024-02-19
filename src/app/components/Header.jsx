@@ -42,7 +42,7 @@ const Header = () => {
 
     const handleMenu = () => {
         if (menu === 'hidden') {
-            setMenu('block')
+            setMenu('flex flex-col')
         } else {
             setMenu('hidden')
         }
@@ -59,7 +59,7 @@ const Header = () => {
 
 
 
-    return (<header className=" fixed w-full justify-between items-center bg-[#614E2E] h-[50px] text-white px-5">
+    return (<header className=" fixed w-full justify-between items-center bg-[#614E2E] h-[50px] text-white px-5 z-40">
 
         <nav className="flex justify-between items-center space-x-2  ">
 
@@ -72,17 +72,53 @@ const Header = () => {
 
             </div>
 
-            <ul className={`${menu}    absolute top-[200%] left-[30%] text-white bg-[#614E2E] shadow-slate-700 shadow-xl  w-[50%] h-[50vh] rounded-xl  space-x-3 [&>li]:text-center  z-30`}>
-                <li className=" text-center">
+            <ul className={`${menu}    absolute top-[200%] left-[25%] text-white bg-[#614E2E] shadow-slate-700 shadow-xl  w-[50%]  rounded-xl  space-y-5 py-4 justify-center items-center  [&>li]:text-xl [&>li]:font-bold`}>
+                <li >
                     <Link href="/">Inicio</Link>
                 </li>
 
                 <li>
                     <Link
-                        href="/historia">
+                        href="/pages/principalesAportes">
+                        Principales aportes
+                    </Link>
+                </li>
+
+                <li>
+                    <Link
+                        href="/pages/normativaCyL">
+                        Normativa C y L de la rvocatoria
+                    </Link>
+                </li>
+
+                <li>
+                    <Link
+                        href="/pages/noticias">
+                        Noticias
+                    </Link>
+                </li>
+
+                <li>
+                    <Link
+                        href="/pages/biblioteca">
+                        Biblioteca
+                    </Link>
+                </li>
+
+                <li>
+                    <Link
+                        href="/pages/historia">
                         Historia
                     </Link>
                 </li>
+
+                <li>
+                    <Link
+                        href="/pages/revocatoria_M_P">
+                        Revocatoria del mandato por pais
+                    </Link>
+                </li>
+
                 <li>
                     {user ? <button
                         onClick={() => logout()}
