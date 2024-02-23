@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import Header from "./components/Header"
 
 export default function Home() {
 
@@ -33,6 +34,8 @@ export default function Home() {
   console.log(datos)
 
   return (
+    <>
+    <Header/>
     <div className=" w-full bg-slate-200 text-black pt-20 px-40">
 
 
@@ -69,5 +72,7 @@ export default function Home() {
 
 
     </div>
+    
+    </>
   )
 }

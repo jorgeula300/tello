@@ -14,7 +14,6 @@ model Biblioteca {
   id Int @id @default(autoincrement())
   nombreD String @unique
   imgLink String @unique
-  descricion String 
   docLink String @unique
 }
 
@@ -31,3 +30,36 @@ model Home{
   urlImagen String
   contenido String
 }
+
+model Normas{
+  id Int @id @default(autoincrement())
+  titulo String
+  urlImagen String
+  urlDoc String
+}
+
+model Historia{
+  id Int @id @default(autoincrement())
+  titulo String
+  urlImagen String
+  contenido String
+}
+
+model PrincipalesA{
+  id Int @id @default(autoincrement())
+  titulo String
+  urlImagen String
+  contenido String
+}
+
+
+model revocatoriasP{
+  id Int @id @default(autoincrement())
+  pais String
+  urlImagen String
+  fechas String
+}
+
+
+
+

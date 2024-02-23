@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import axios from "axios";
 
-const PrincipalesA = () => {
+const Historia = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
@@ -17,7 +17,7 @@ const PrincipalesA = () => {
 
     return (<section className=" w-full h-[100vh] bg-slate-200 flex justify-center items-center">
         <div className=" w-[80%] h-[80%] flex flex-col justify-center items-center bg-slate-800 rounded-xl  shadow-xl shadow-slate-600">
-            <h2 className=" font-bold text-xl text-center">Formulario de principales aportes</h2>
+            <h2 className=" font-bold text-xl text-center">Historia</h2>
 
             <form action="" onSubmit={onSubmit} className=" flex flex-col justify-center  space-y-3 mt-5 w-[50%] h-[80%]  [&>input]:rounded-xl  [&>input]:text-black [&>input]:pl-3 [&>input]:pr-3 [&>textarea]:text-black [&>textarea]:rounded-xl [&>textarea]:pr-3 [&>textarea]:pl-3 " >
                 <label htmlFor="Titulo">Titulo de tematica</label>
@@ -48,4 +48,4 @@ const PrincipalesA = () => {
     </section>);
 }
 
-export default PrincipalesA;
+export default Historia;
