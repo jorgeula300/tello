@@ -10,7 +10,7 @@ const PrincipalesA = () => {
 
     const onSubmit = handleSubmit(async (data) => {
         console.log(data)
-        axios.post("/api/home", data)
+        axios.post("/api/principalesA", data)
         reset()
     })
 

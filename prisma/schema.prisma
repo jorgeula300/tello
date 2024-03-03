@@ -11,55 +11,62 @@ datasource db {
 }
 
 model Biblioteca {
-  id Int @id @default(autoincrement())
-  nombreD String @unique
-  imgLink String @unique
-  docLink String @unique
+  id        Int    @id @default(autoincrement())
+  titulo    String @unique
+  urlImagen String @unique
+  urlPdf    String @unique
 }
 
-model User{
-  id Int @id @default(autoincrement())
-  nombre String
-  correo String @unique
+model User {
+  id       Int    @id @default(autoincrement())
+  nombre   String
+  correo   String @unique
   password String
 }
 
-model Home{
-  id Int @id @default(autoincrement())
-  titulo String
+model Home {
+  id        Int    @id @default(autoincrement())
+  titulo    String
   urlImagen String
   contenido String
 }
 
-model Normas{
-  id Int @id @default(autoincrement())
-  titulo String
+model Normas {
+  id        Int    @id @default(autoincrement())
+  titulo    String
+  pais      String
   urlImagen String
-  urlDoc String
+  urlDoc    String
 }
 
-model Historia{
-  id Int @id @default(autoincrement())
-  titulo String
-  urlImagen String
-  contenido String
-}
-
-model PrincipalesA{
-  id Int @id @default(autoincrement())
-  titulo String
+model Historia {
+  id        Int    @id @default(autoincrement())
+  titulo    String
   urlImagen String
   contenido String
 }
 
-
-model revocatoriasP{
-  id Int @id @default(autoincrement())
-  pais String
+model PrincipalesA {
+  id        Int    @id @default(autoincrement())
+  titulo    String
   urlImagen String
-  fechas String
+  contenido String
 }
 
+model RevocatoriasP {
+  id        Int    @id @default(autoincrement())
+  pais      String
+  urlImagen String
+  urlPdf    String
+  fechas    String
+}
 
+model Noticias {
+  id         Int    @id @default(autoincrement())
+  titulo     String
+  urlImagen  String
+  urlNoticia String
+  contenido  String
+}
 
-
+// npx prisma migrate dev  

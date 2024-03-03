@@ -1,6 +1,6 @@
 'use client'
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
 const Noticias = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -8,7 +8,7 @@ const Noticias = () => {
 
     const onSubmit = handleSubmit(async (data) => {
         console.log(data)
-        axios.post("/api/home", data)
+        axios.post("/api/noticias", data)
         reset()
     })
 
@@ -18,8 +18,8 @@ const Noticias = () => {
 
             <form action="" onSubmit={onSubmit} className=" flex flex-col justify-center  space-y-3 mt-5 w-[50%] h-[80%]  [&>input]:rounded-xl  [&>input]:text-black [&>input]:pl-3 [&>input]:pr-3 [&>textarea]:text-black [&>textarea]:rounded-xl [&>textarea]:pr-3 [&>textarea]:pl-3 " >
                 <label htmlFor="Titulo">Titulo de la noticia</label>
-                {errors.Titulo && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.Titulo.message}</span>}
-                <input type="text" id="Titulo" {...register("Titulo", {
+                {errors.titulo && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.titulo.message}</span>}
+                <input type="text" id="Titulo" {...register("titulo", {
                     required: {
                         value: true,
                         message: "Este campo es requerido"
@@ -65,7 +65,7 @@ const Noticias = () => {
                         message: "La url debe de tener almenos 5 caracteres"
                     },
                     maxLength: {
-                        value: 100,
+                        value: 238,
                         message: "no debe tener mas de 100 caracteres"
                     }
                 })} id="Contenido" cols="30" rows="10"></textarea>

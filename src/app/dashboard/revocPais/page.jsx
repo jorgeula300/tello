@@ -10,7 +10,7 @@ const revocPais = () => {
 
     const onSubmit = handleSubmit(async (data) => {
         console.log(data)
-        axios.post("/api/home", data)
+        axios.post("/api/revocatoriaP", data)
         reset()
     })
 
@@ -20,27 +20,41 @@ const revocPais = () => {
             <h2 className=" font-bold text-xl text-center">Revocatoria del mandato por pais</h2>
 
             <form action="" onSubmit={onSubmit} className=" flex flex-col justify-center  space-y-3 mt-5 w-[50%] h-[80%]  [&>input]:rounded-xl  [&>input]:text-black [&>input]:pl-3 [&>input]:pr-3 [&>textarea]:text-black [&>textarea]:rounded-xl [&>textarea]:pr-3 [&>textarea]:pl-3 " >
-                <label htmlFor="Titulo">Pais</label>
-                {errors.titulo && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.titulo.message}</span>}
-                <input type="text" id="Titulo" {...register("titulo", {
+                <label htmlFor="pais">Pais</label>
+                {errors.pais && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.pais.message}</span>}
+                <input type="text" id="pais" {...register("pais", {
                     required: {
                         value: true,
                         message: "Este campo es requerido"
                     },
                     minLength: {
-                        value: 5,
-                        message: "El titulo debe tener al menos 5 caracteres"
+                        value: 3,
+                        message: "El pais debe tener al menos 3 caracteres"
                     }
-                })} placeholder="Ingrese el titulo de la tematica" />
+                })} placeholder="Ingrese el pais " />
 
                 <label htmlFor="urlImagen">Ingresa url de imagen</label>
-                <input type="text" id="urlImagen" {...register("urlImagen")} placeholder="Ingrese la url de la imagen" />
+                <input type="text" id="urlImagen" {...register("urlImagen",{
+                    required:{
+                        value:true,
+                        message:"Este campo es requerido"
+                    } 
+                
+                })} placeholder="Ingrese la url de la imagen" />
+
+                <label htmlFor="urlPdf">Ingresa url del documento</label>
+                <input type="text" id="urlPdf" {...register("urlPdf", {
+                    required:{
+                        value:true,
+                        message:"Este campo es requerido"
+                    }
+                })} placeholder="Ingrese la url del documento" />
 
                 <label htmlFor="urlImagen">Fechas de revocatorias</label>
                 <input type="text" id="urlImagen" {...register("fechas")} placeholder="Desde - hasta" />
 
                 
-
+  
                 <button className=" bg-slate-200 text-slate-800 text-lg font-bold rounded-lg hover:bg-slate-300 " type="submit">Enviar</button>
 
             </form>
