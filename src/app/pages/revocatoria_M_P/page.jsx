@@ -18,10 +18,10 @@ const Revocatoria_M_P = () => {
     return (<>
 
         <Header />
-        <section className=" w-full min-h-[100vh] text-black bg-slate-200 pt-16 px-5">
-            <h2 className=" text-xl font-bold uppercase text-[#614E2E]">Revocatoria de mandato por pais</h2>
+        <section className=" w-full min-h-[100vh] text-black bg-white pt-16 px-5">
+            <h2 className=" text-xl font-bold uppercase text-slate-800">Revocatoria de mandato por pais</h2>
             <div className="w-full flex flex-col justify-center items-center" >
-                <div className=" min-w-[70%] grid grid-cols-4 py-2 gap-3">
+                <div className=" min-w-[70%] grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 py-2 gap-3">
                     {datos?.map(dato => (
                         <Link className=" w-[250px] h-[250px] shadow-xl rounded-xl " href={dato.urlPdf} target="_blank" key={dato.id}>
                             <div className=" w-full h-[70%] overflow-hidden">

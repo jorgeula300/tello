@@ -14,12 +14,12 @@ const Noticias = () => {
     console.log(data)
     return (<>
         <Header />
-        <section className=" w-full min-h-[100vh] text-black bg-slate-200 pt-16 px-5">
-            <h2 className=" text-xl font-bold uppercase text-[#614E2E]">Noticias</h2>
+        <section className=" w-full min-h-[100vh] text-black bg-white pt-16 px-5">
+            <h2 className=" text-xl font-bold uppercase text-slate-800">Noticias</h2>
             <div className="w-full flex flex-col justify-center items-center" >
-                <div className=" w-[70%] grid grid-cols-2 py-2 gap-3 justify-items-center">
+                <div className=" w-[100%] xl:w-[70%] lg:w-[90%] grid grid-cols-1 lg:grid-cols-2 py-2 gap-3 justify-items-center">
                     {data?.map(dato => (
-                        <div className=" w-[400px] h-[400px] shadow-xl rounded-xl  " key={dato.id}>
+                        <div className=" w-[330px] h-[380px] sm:w-[400px] sm:h-[400px] shadow-xl rounded-xl  " key={dato.id}>
                             <div className=" w-full h-[50%] overflow-hidden">
                                 <Image className=" rounded-t-xl" width={300} height={300} layout="responsive" objectFit="cover" objectPosition="center" src={dato?.urlImagen} alt="imagen" style={{
                                     maxWidth: '100%',
@@ -31,7 +31,7 @@ const Noticias = () => {
                                 
                                 <div className=" flex flex-col  h-[80%] justify-between items-center">
                                 <p className=" text-sm">{dato?.contenido}</p>
-                                    <Link className=" w-full text-center bg-[#614E2E] text-white px-3 py-1 rounded-xl font-semibold"
+                                    <Link className=" w-full text-center bg-slate-800 text-white px-3 py-1 rounded-xl font-semibold"
                                         href={dato?.urlNoticia}
                                         target="_blank"
                                     >Ver mas</Link>
