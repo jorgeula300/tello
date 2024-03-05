@@ -31,6 +31,7 @@ const Noticias = () => {
                 })} placeholder="Ingrese el titulo de la tematica" />
 
                 <label htmlFor="urlImagen">Ingresa url de imagen</label>
+                {errors.urlImagen && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.urlImagen.message}</span>}
                 <input type="text" id="urlImagen" {...register("urlImagen", {
                     required: {
                         value: true,
@@ -43,6 +44,7 @@ const Noticias = () => {
                 })} placeholder="Ingrese la url de la imagen" />
 
                 <label htmlFor="urlImagen">Ingresa url de la noticia</label>
+                {errors.urlNoticia && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.urlNoticia.message}</span>}
                 <input type="text" id="urlImagen" {...register("urlNoticia", {
                     required: {
                         value: true,
@@ -55,6 +57,7 @@ const Noticias = () => {
                 })} placeholder="Ingrese la url de la noticia" />
 
                 <label htmlFor="Contenido">Pequeña descripcion</label>
+                {errors.contenido && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.contenido.message}</span>}
                 <textarea {...register("contenido", {
                     required: {
                         value: true,

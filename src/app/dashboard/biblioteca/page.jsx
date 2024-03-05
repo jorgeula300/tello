@@ -31,6 +31,7 @@ const Biblioteca = () => {
                 })} placeholder="Ingrese el titulo de la tematica" />
 
                 <label htmlFor="urlImagen">Ingresa url de imagen</label>
+                {errors.urlImagen && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.urlImagen.message}</span>}
                 <input type="text" id="urlImagen" {...register("urlImagen", {
                     required: {
                         value: true,
@@ -43,6 +44,7 @@ const Biblioteca = () => {
                 })} placeholder="Ingrese la url de la imagen" />
 
                 <label htmlFor="urlPdf">Ingresa url del pdf</label>
+                {errors.urlPdf && <span className=" bg-red-600 text-white rounded-xl text-center block">{errors.urlPdf.message}</span>}
                 <input type="text" id="urlPdf" {...register("urlPdf", {
                     required: {
                         value: true,
